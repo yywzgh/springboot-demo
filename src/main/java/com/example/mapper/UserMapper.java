@@ -4,4 +4,6 @@ public interface UserMapper {
 
    int getId();
    
+   
+   String getUsername();
 }

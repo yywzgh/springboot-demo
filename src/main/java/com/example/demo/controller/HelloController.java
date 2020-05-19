@@ -27,5 +27,10 @@ public class HelloController {
         return String.valueOf(userService.getId());
     }
 
+    @RequestMapping("getUsername")
+    @ResponseBody
+    public String getUsername(){
+        return String.valueOf(userService.getUsername());
+    }
     
 }
