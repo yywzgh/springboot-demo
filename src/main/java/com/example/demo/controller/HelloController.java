@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,6 +34,19 @@ public class HelloController {
     @ResponseBody
     public String getUsername(){
         return String.valueOf(userService.getUsername());
+    }
+    
+    
+    @RequestMapping("/addUser")
+    @ResponseBody
+    public String addUser() {
+    	Map<String, Object> map = new HashMap<String, Object>();
+    	for(int i=100; i < 220;i++) {
+    		map.put("id", i);
+    		map.put("age", i-50);
+    		userService.insertUser(map);    		
+    	}
+    	return "Hello World";
     }
     
 }

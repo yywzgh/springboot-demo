@@ -7,11 +7,15 @@
     </resultMap>
  
     <select id="getId" resultType="java.lang.Integer">
-        select user_id from sys_user where user_id = 1
+        select tbUserId from ztc_user where user_id = 1
     </select> 
     
     <select id="getUsername" resultType="java.lang.String">
-        select user_name from sys_user where user_id = 1
+        select tbUserId from ztc_user where user_id = 1
     </select>
+    
+    <insert id="insertUser" parameterType="map">
+    	insert into test_2(id, age) values (#{id}, #{password});
+    </insert>
     
 </mapper>

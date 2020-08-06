@@ -6,11 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+//import de.codecentric.boot.admin.server.config.EnableAdminServer;
+
 
 @MapperScan("com.example.mapper")
 @SpringBootApplication(scanBasePackages = "com.example")
 @ServletComponentScan
 @EnableTransactionManagement
+//@EnableAdminServer
 public class DemoApplication {
 	
 	// 测试
