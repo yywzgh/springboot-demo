@@ -24,13 +24,13 @@ public class RocketMQProducer {
 		 * DefaultMQProducer("YOUR GROUP ID", getAclRPCHook());
 		 */
 		DefaultMQProducer producer = new DefaultMQProducer("task-group", getAclRPCHook(), true, null);
-		
-		//DefaultMQProducer producer = new DefaultMQProducer("task-group");
-		
+
+		// DefaultMQProducer producer = new DefaultMQProducer("task-group");
+
 		/**
 		 * 设置使用接入方式为阿里云，在使用云上消息轨迹的时候，需要设置此项，如果不开启消息轨迹功能，则运行不设置此项.
 		 */
-		//producer.setAccessChannel(AccessChannel.CLOUD);
+		// producer.setAccessChannel(AccessChannel.CLOUD);
 		/**
 		 * 设置为您从阿里云控制台获取的接入点信息，类似“http://MQ_INST_XXXX.aliyuncs.com:80”ss
 		 */
@@ -39,8 +39,7 @@ public class RocketMQProducer {
 
 		for (int i = 0; i < 128; i++) {
 			try {
-				Message msg = new Message("topic-test", "test",
-						"Hello world".getBytes(RemotingHelper.DEFAULT_CHARSET));
+				Message msg = new Message("topic-test", "test", "Hello world".getBytes(RemotingHelper.DEFAULT_CHARSET));
 				SendResult sendResult = producer.send(msg);
 				System.out.printf("%s%n", sendResult);
 			} catch (Exception e) {
